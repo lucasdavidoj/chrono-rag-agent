@@ -4,7 +4,7 @@ import time
 import mwparserfromhell
 import requests
 import wikitextparser as wtp
-from app.config import WIKI_HEADERS, REQUEST_DELAY, WIKI_BASE_URL
+from app.config import REQUEST_DELAY, WIKI_BASE_URL, WIKI_HEADERS
 
 logging.basicConfig(
     level=logging.WARNING, format="%(asctime)s [%(levelname)s] %(message)s"
