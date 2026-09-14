@@ -4,7 +4,7 @@ import time
 import mwparserfromhell
 import requests
 import wikitextparser as wtp
-from app.config import HEADERS, REQUEST_DELAY, WIKI_BASE_URL
+from app.config import WIKI_HEADERS, REQUEST_DELAY, WIKI_BASE_URL
 
 logging.basicConfig(
     level=logging.WARNING, format="%(asctime)s [%(levelname)s] %(message)s"
@@ -53,7 +53,7 @@ class ArticleFetcher:
             "format": "json",
         }
 
-        response = requests.get(WIKI_BASE_URL, params=params, headers=HEADERS)
+        response = requests.get(WIKI_BASE_URL, params=params, headers=WIKI_HEADERS)
         response.raise_for_status()
 
         time.sleep(REQUEST_DELAY)
@@ -106,7 +106,7 @@ class ArticleFetcher:
         response = requests.post(
             WIKI_BASE_URL,
             data=params,
-            headers=HEADERS,
+            headers=WIKI_HEADERS,
         )
         response.raise_for_status()
 
